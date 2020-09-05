@@ -16,3 +16,16 @@
 //   const sin = Math.sin(offset);
 //   return { transform: `matrix3d(${sin}, ${-cos}, ${sin}, 0, ${-cos}, ${sin}, 0, 0, 0, ${cos}, ${cos}, ${sin}, 0, 0, 0, 1)` };
 // }
+
+new Vue({
+  el: '#app',
+  data: {
+    outputText: ""
+  },
+  methods: {
+    onInput(e) {
+      console.log(e.target.value);
+      this.outputText = e.target.value;
+    }
+  }
+});
