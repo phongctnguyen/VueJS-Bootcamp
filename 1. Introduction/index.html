@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
+
 <body>
   <!-- <div id="root" @mousemove="onMouseMove">
     <div :style="styleOne"></div>
@@ -16,14 +18,21 @@
 
     <div>
       Input:
-      <input @input="onInput"/>
+      <input @input="onInput" />
     </div>
 
     <div>
-      Output: {{outputText}}
+      Output: <a :href="generateLink">{{generateLink}}</a>
+    </div>
+    <div>
+      {{text}}
+    </div>
+    <div>
+      {{text}}
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>

@@ -20,12 +20,24 @@
 new Vue({
   el: '#app',
   data: {
-    outputText: ""
+    // Initialize our list of 'ingredients'
+    textInput: '',
+    text: 'Hello Phong',
+  },
+  computed: {
+    // Turn data into viewable values
+    generateLink() {
+      const link = `https://vuejs.org/v2/guide/index.html#${this.textInput}`;
+      return link;
+    },
   },
   methods: {
+    // Use these funtions to change data
     onInput(e) {
-      console.log(e.target.value);
-      this.outputText = e.target.value;
-    }
-  }
+      this.textInput = e.target.value;
+    },
+  },
+  // template: `
+  //   <div>Hello Phong</div>
+  // `
 });
