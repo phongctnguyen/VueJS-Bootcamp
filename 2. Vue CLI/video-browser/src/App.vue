@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <SearchBar @termChange="onTermChange"></SearchBar>
+    <div class="row">
+      <VideoDetail :video="selectedVideo"></VideoDetail>
+      <VideoList :videos="videos" @videoSelect="onVideoSelect"></VideoList>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SearchBar from "./components/SearchBar";
+import VideoList from "./components/VideoList";
+import VideoDetail from "./components/VideoDetail";
+import youtube from "./apis/youtube";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
-</script>
+    SearchBar,
+    VideoList,
+    VideoDetail,
+  },
+  data() {
+    return {
+      videos: [],
+      selectedVideo: null,
+    };
+  },
+  methods: {
+    async onTermChange(searchTerm) {
+      const response = await youtube.get("/search", {
+        params: {
+          q: searchTerm,
+        },
+      });
+      this.videos = response.data.items;
+    },
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+    onVideoSelect(video) {
+      this.selectedVideo = video;
+    },
+  },
+};
+</script>

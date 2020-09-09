@@ -18,4 +18,15 @@
 [Vue-Directives](https://vuejs.org/v2/guide/#Declarative-Rendering)
 
 ### Template Syntax
-![Template-Syntax](https://vuejs.org/v2/guide/syntax.html)
+[Template-Syntax](https://vuejs.org/v2/guide/syntax.html)
+
+### Vue CLI
+![Vue-CLI](https://i.ibb.co/Cv2Lgwr/Capture.png)
+
+### Vue Component
+`Vue Component vs Vue Instace`
+- Vue Component: Represents a set of rules for getting content on the screen and how users can interact with it
+- Vue Instance: An instance of a Vue Component
+
+### Communicate between parent and child component
+![Parent-Child](https://i.ibb.co/0GVdXGV/Capture.png)
